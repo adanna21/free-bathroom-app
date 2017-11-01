@@ -1,0 +1,28 @@
+<nav>
+  <div id="menu">
+    <div id="logo">
+      Find A Loo
+    </div>
+    <i class="fa" aria-hidden="true"></i>
+    <div id="new-bathroom">
+      Submit New Bathroom
+    </div>
+    <div id="about">
+      Saved Bathrooms
+    </div>
+    <div class="home-container">
+      <a href="/auth/login" class="lintologin"><i class="fa fa-user" aria-hidden="true"></i> Login</a>
+      <a href="/auth/register" class="lintoregister"><i class="fa fa-id-card-o" aria-hidden="true"></i> Register</a>
+    </div>
+  </div>
+  <h1>Welcome to Find-A-Loo App!</h1>
+
+  <form class="submit-search" action="/" method="POST" >
+    <input type="text" name="search" id="search">
+    <input type="button" name="submit" value="&#xf041;" id="current-loc" class="fa fa-map-marker initiators" />
+    <input type="button" name="submit" value="&#xf002;" id="submit" class="fa fa-search initiators" />
+  </form>
+  <div id="add-bathroom">
+    <button id="add-button"><a href="/bathrooms/new"><i class="fa fa-plus-square" aria-hidden="true"></i> Add New Bathroom</a></button>
+  </div>
+</nav>
