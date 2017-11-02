@@ -122,10 +122,11 @@ a {
 nav.active h1{
   font-size: 4em;
   display: block;
-  padding-top: 15%;
+  padding-top: 10%;
   text-shadow: 0 2px 5px #000;
   color: white;
   margin: 0 auto;
+  font-family: 'Boogaloo', cursive;
 }
 .home-container.active a {
   margin-right: 20px;
