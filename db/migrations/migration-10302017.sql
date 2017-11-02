@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS bathrooms (
   state CHAR(2) NOT NULL,
   accessible BOOLEAN NOT NULL,
   unisex BOOLEAN NOT NULL,
+  price BOOLEAN NOT NULL,
   directions TEXT,
   comment TEXT,
   latitude DECIMAL(9,6),
@@ -19,8 +20,8 @@ CREATE TABLE IF NOT EXISTS bathrooms (
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   username VARCHAR(15) NOT NULL UNIQUE,
-  password CHAR(100) NOT NULL,
+  password_encrypt CHAR(100) NOT NULL,
   name VARCHAR(100) NOT NULL,
-  email VARCHAR(100) NOT NULL UNIQUE
+  email VARCHAR(100) NOT NULL UNIQUE,
   bathroom_id INTEGER REFERENCES bathrooms(id)
 );
