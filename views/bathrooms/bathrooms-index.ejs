@@ -1,5 +1,22 @@
 <% include ../partials/boilerplate %>
-<% include ../partials/nav %>
-  <div id="index-container">
-gggg
+
+  <div class="index-container">
+    <% bathrooms.forEach(bathroom => { %>
+      <div class="bathroom">
+        <div class="top-meta">
+          <span class="name"><%= bathroom.name %></span>
+          <span class="unisex">Status: <%= (bathroom.unisex) ? 'Gender Netral' : 'Not' %></span>
+        </div>
+        <div class="bottom-meta">
+          <span class="street"> <%= bathroom.street %></span>
+          <div class="buttons">
+            <a class="linktosingle" href="/bathrooms/<%= bathroom.id %>">Details</a>
+            <a class="editlink" href="/bathrooms/<%=bathroom.id%>/edit">Edit</a>
+            <form class="delete" action="/bathrooms/<%= bathroom.id%>?_method=DELETE" method="POST">
+              <input class="dellink" type="submit" value="Delete">
+            </form>
+          </div>
+        </div>
+      </div>
+    <% }) %>
   </div>

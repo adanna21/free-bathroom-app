@@ -14,7 +14,10 @@ bathroom.api = function (req, res, next) {
   })
   .then(response => {
     console.log(response.data);
-    return res.json(response.data)
+    return res.json(
+      { bathrooms: response.data,
+        user: res.locals.user //used to end badck user stat to client
+      })
 
     // response.data.forEach((e, i) => {
     //   const { name, street, city, state, unisex, directions, latitude, longitude } = e;
@@ -27,5 +30,5 @@ bathroom.api = function (req, res, next) {
   })
   .catch(err => console.error(err));
 }
-bathroom.search =
+
 module.exports = bathroom;

@@ -1,0 +1,9 @@
+<% include ../partials/boilerplate %>
+<% include ../partials/nav-inactive %>
+      <div class="form-auth">
+        <form action="/auth/login" method="POST">
+          <input type="text" name="username" placeholder="username" required/><br>
+          <input type="text" name="password" placeholder="password" required/><br>
+          <input class="login" type="submit" value="Login" />
+        </form>
+      </div>

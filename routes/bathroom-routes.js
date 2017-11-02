@@ -6,9 +6,11 @@ const helper = require('../services/bathroom-helpers')
 
 
 bathroomRoutes.get('/', bathroomController.index);
-bathroomRoutes.get('/new', (req,res)=>{
-  res.render('bathrooms/bathrooms-new',{});
-});
+
+// this is the dispay view for the post
+// bathroomRoutes.get('/new', (req,res)=>{
+//   res.render('bathrooms/bathrooms-new',{});
+// });
 bathroomRoutes.post('/',bathroomController.create);
 bathroomRoutes.post('/show',bathroomController.show);
 
@@ -24,12 +26,12 @@ bathroomRoutes.get('/map', (req,res)=>{
 bathroomRoutes.get('/index', (req,res)=>{
   res.render('bathrooms/bathrooms-index',{});
 });
-// showing todo details
-// bathroomRoutes.get('/:id', );
 
-bathroomRoutes.get('/show', (req,res)=>{
-  res.render('bathrooms/bathrooms-single');
-});
+// showing bathroom details
+bathroomRoutes.get('/:id', bathroomController.show);
+// bathroomRoutes.get('/show', (req,res)=>{
+//   res.render('bathrooms/bathrooms-single');
+// });
 
 
 module.exports = bathroomRoutes;

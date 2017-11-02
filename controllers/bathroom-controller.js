@@ -13,20 +13,21 @@ const Bathroom = require('../models/Bathroom');
 
 const bathroomController = {};
 
-// taskController.index = (req, res) => {
-//   Task.findAll(req.user.id)
-//     .then(tasks => {
-//       res.status(200).render('tasks/tasks-index', {
-//         tasks: tasks,
-//       });
-//     }).catch(err => {
-//       console.log(err);
-//       res.status(500).json({error: err});
-//     });
-// };
 bathroomController.index = (req, res) => {
-  res.render('index');
-}
+  Bathroom.findAll(req.user.id)
+    .then(bathrooms => {
+      res.status(200).render('bathrooms/bathrooms-index', {
+        bathrooms: bathrooms,
+      });
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({error: err});
+    });
+};
+
+// bathroomController.index = (req, res) => {
+//   res.render('index');
+// }
 
 
 bathroomController.send = (req, res) => {
@@ -34,14 +35,48 @@ bathroomController.send = (req, res) => {
   //res.json(res.locals.information)
 }
 
+//give model instruction on what to do when task is clicked
 bathroomController.show = (req, res) => {
-  console.log(req.body);
-}
+  Bathroom.findById(req.params.id)
+    .then(bathroom => {
+      res.status(200).render('bathrooms/bathrooms-single', {
+        bathroom: bathroom,
+      });
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({error: err});
+    });
+};
+
+//commented out because add bathroom feature removed
+// bathroomController.create = (req,res) => {
+//   Bathroom.create({
+//     name: req.body.name ,
+//     street: req.body.street ,
+//     city: req.body.city ,
+//     state: req.body.state,
+//     accessible: req.body.accessible  || 'FALSE',
+//     unisex: req.body.unisex  || 'TRUE',
+//     price: req.body.price  || 'TRUE',
+//     directions: req.body.directions,
+//     comment: req.body.comment,
+//     latitude: req.body.latitude,
+//     longitude: req.body.longitude,
+//     country: req.body.country,
+//     distance: req.body.distance,
+//     bearing: req.body.bearing
+//   }, req.user.id).then((bathroom)=>{
+//     res.redirect(`/bathrooms/${bathroom.id}`)
+//   }).catch(err=>{
+//     console.log(err)
+//     res.status(500).json(err)
+//   })
+// }
 
 bathroomController.create = (req,res) => {
   Bathroom.create({
     name: req.body.name ,
-    street: req.body.street ,
+    street: req.body.street,
     city: req.body.city ,
     state: req.body.state,
     accessible: req.body.accessible,
@@ -51,19 +86,14 @@ bathroomController.create = (req,res) => {
     comment: req.body.comment,
     latitude: req.body.latitude,
     longitude: req.body.longitude,
-    created_at: req.body.created_at,
-    updated_at: req.body.updated_at,
     country: req.body.country,
-    distance: req.body.distance,
-    bearing: req.body.bearing
-  }).then((bathroom)=>{
-    res.send(bathroom)
+    distance: req.body.distance
+  }, req.user.id).then((bathroom)=>{
+    res.redirect(`/bathrooms/${bathroom.id}`)
   }).catch(err=>{
     console.log(err)
     res.status(500).json(err)
   })
 }
-
-
 
 module.exports = bathroomController;

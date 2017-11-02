@@ -1,17 +1,22 @@
-<!-- <div class="bathroom-single-container">
-  <div class="bathroom-details"> -->
-    <!-- <a class="linktonew" href="/tasks/new"><button type="button" name="add"><i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp; Add A New Task</button></a> -->
-    <!-- <a class="linktosingle" href="/"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i>Back</a>
+<div class="bathroom-single-container">
+  <div class="bathroom-details">
+   <a class="linktosingle" href="/"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i>Back</a>
     <div class="meta">
-      <span class="name"><%= task.title %></span>
-      <span class="price"> <%= (task.status) ? 'To-do' : 'Done' %></span>
-      <span class="accessible"> <%= (task.status) ? 'To-do' : 'Done' %></span>
-      <span class="unisex"> <%= (task.status) ? 'To-do' : 'Done' %></span>
-      <span class="address"><%= task.category %></span>
-      <span class="directions"><%= task.description %></span>
+      <span class="name"><%= bathroom.name %></span><br>
+      <span class="street"><%= bathroom.street %></span><br>
+      <span class="city"><%= bathroom.city %></span><br>
+      <span class="state"><%= bathroom.state %></span><br>
+      <span class="accessible"> <%= (bathroom.accessible) ? 'Accessible' : 'Not Accessible' %></span><br>
+      <span class="unisex"> <%= (bathroom.unisex) ? 'Gender Neutral' : 'Gendered single stall or Safe place' %></span><br>
+      <span class="price"> <%= (bathroom.price) ? 'Free' : 'Customers Only' %></span><br>
+      <span class="directions"><%= bathroom.directions %></span><br>
+      <span class="comment"><%= bathroom.comment %></span><br>
+      <span class="latitude"><%= bathroom.latitude %></span><br>
+      <span class="longitude"><%= bathroom.longitude %></span><br>
+      <span class="country"><%= bathroom.country %></span><br>
+      <span class="distance"><%= bathroom.distance %></span><br>
       <div class="detailed-directions">
       </div>
     </div>
   </div>
-</div> -->
-<%= console.log(json.name)%>
+</div>

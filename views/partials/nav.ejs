@@ -1,19 +1,22 @@
 <nav class="active">
   <div id="menu" class="active">
     <div id="logo" class="active">
-      Find A Loo
+      <a href="/">Find-A-Loo</a>
     </div>
     <i class="fa" aria-hidden="true"></i>
-    <div id="new-bathroom" class="active">
-      Submit New Bathroom
-    </div>
-    <div id="about" class="active">
-      Saved Bathrooms
-    </div>
-    <div class="home-container active">
-      <a href="/auth/login" class="lintologin active"><i class="fa fa-user" aria-hidden="true"></i> Login</a></button>
-      <a href="/auth/register" class="lintoregister active"><i class="fa fa-id-card-o" aria-hidden="true"></i> Register</a></button>
-    </div>
+    <% if(!user) { %>
+      <div class="home-container active">
+        <a href="/auth/login" class="lintologin active"><i class="fa fa-user" aria-hidden="true"></i> Login</a>
+        <a href="/auth/register" class="lintoregister active"><i class="fa fa-id-card-o" aria-hidden="true"></i> Register</a>
+      </div>
+    <% } else { %>
+      <div id="about" class="active">
+        Saved Bathrooms
+      </div>
+      <div class="home-container active">
+        <a href="/auth/logout" class="lintologin active"><i class="fa fa-user" aria-hidden="true"></i> Logout</a>
+      </div>
+    <% } %>
   </div>
   <h1 class="active">Welcome to Find-A-Loo App!</h1>
 
@@ -22,7 +25,7 @@
     <input type="button" name="submit" value="&#xf041;" id="current-loc" class="fa fa-map-marker active initiators" />
     <input type="button" name="submit" value="&#xf002;" id="submit" class="fa fa-search active initiators" />
   </form>
-  <div id="add-bathroom" class="active">
+  <!-- <div id="add-bathroom" class="active">
     <button id="add-button" class="active"><a href="/bathrooms/new"><i class="fa fa-plus-square" aria-hidden="true"></i> Add New Bathroom</a></button>
-  </div>
+  </div> -->
 </nav>

@@ -10,8 +10,12 @@ nav {
   flex: 1;
   background-color: rgba(230, 14, 14, 0.63);
 }
-.home-container {
+nav h1 {
   display: none;
+}
+#logo {
+  font-family: 'Chewy', cursive;
+  font-size: 2em;
 }
 #menu  {
   display: flex;
@@ -28,11 +32,13 @@ nav {
 #add-button {
   display: none;
 }
+
 #search {
-  flex-basis: 60vw;
-  font-size: 1.1em;
+  flex-basis: 40vw;
+  font-size: 1.5em;
   border: none;
   box-shadow: 0 1px 0 gray;
+  margin-left: 2px;
   padding-left: 10px;
 }
 #submit, #current-loc {
@@ -57,10 +63,21 @@ nav {
 }
 #map {
   flex: 4;
-  /*width: 80vw;*/
-  /*margin: 0 auto;*/
 }
 
+.home-container {
+  display: flex;
+  color: white;
+}
+.home-container a {
+  margin-right: 25px;
+}
+input #submit {
+  background-color: blue;
+  font-size: 2em;
+  font-family: FontAwesome;
+  border: none;
+}
 
 /*ACTIVE STYLES*/
 nav.active{
@@ -93,33 +110,21 @@ nav.active{
 .submit-search.active {
   margin: 5% 10% 2% 10%;
   display: flex;
-  /*flex-basis: 100px;*/
-  /*display: flex;*/
-  /*justify-content: center;
-  align-items: center;*/
+
 }
 .home-container.active {
   display: flex;
-  /*flex-direction: column;*/
-  /*justify-content: center;*/
-  /*align-items: center;*/
-  /*text-align: center;
-  margin: 0 auto;
-  padding: 50px 40px 0 40px;*/
-  /*background-position: center;
-  background-size: cover;*/
-  /*font-family: 'Boogaloo', cursive;*/
-  /*color: white;*/
 }
 a {
    text-decoration: none;
+   color: white;
 }
 nav.active h1{
   font-size: 4em;
   display: block;
   padding-top: 15%;
-  text-shadow: 0 2px 0px #fff;
-  color: black;
+  text-shadow: 0 2px 5px #000;
+  color: white;
   margin: 0 auto;
 }
 .home-container.active a {
@@ -162,67 +167,10 @@ nav.active h1{
 #list-contents.active {
   display: none;
 }
-nav {
-  flex: 1;
-  background-color: rgba(230, 14, 14, 0.63);
-}
-nav h1 {
-  display: none;
-}
-.home-container {
-  display: flex;
-  color: white;
-}
-.home-container a {
-  margin-right: 25px;
-}
-#menu  {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  font-size: 1.4em;
-  padding: 10px 0 10px 0;
-}
-.submit-search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#add-button {
-  display: none;
-}
-#search {
-  flex-basis: 40vw;
-  font-size: 1.5em;
-  border: none;
-  box-shadow: 0 1px 0 gray;
-  margin-left: 2px;
-}
-input #submit {
-  background-color: blue;
-  font-size: 2em;
-  font-family: FontAwesome;
-  border: none;
-}
-#container {
-  flex: 5;
-  display: flex;
-}
-#list {
-  flex: 2;
-}
-.lists{
-  border-bottom: 1px solid gray;
-  padding: 5px;
-}
-#map {
-  flex: 4;
-  /*width: 80vw;*/
-  /*margin: 0 auto;*/
-}
+
 
 /* ####### CREATE PAGE STYLES ########*/
-.add-page {
+.add-page, .form-auth {
   flex: 6;
   display: flex;
   flex-direction: column;
@@ -245,7 +193,7 @@ label {
   display: flex;
   flex-direction: column;
 }
-.add input, .add textarea  {
+.add input, .add textarea, .form-auth input  {
   width: 300px;
   border-radius: 6px;
   box-shadow: inset 0 1px 2px gray;
@@ -254,4 +202,15 @@ label {
   font-size: 1.2em;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.form-auth input {
+  display: flex;
+  align-items: center;
+}
+.form-auth form {
+  margin-top: 35px;
+}
+.register input {
+  margin-top: 20px;
 }
